@@ -93,4 +93,14 @@ public class HoleBase extends BaseModel {
         parcel.writeInt(getNumber());
         parcel.writeInt(getPar());
     }
+
+    public static HoleBase[] getTestHoles(int count, int par) {
+        HoleBase[] holes = new HoleBase[count];
+
+        for(int i = 0; i < count; i++) {
+            holes[i] = new HoleBase(i + 1, par);
+        }
+
+        return holes;
+    }
 }
