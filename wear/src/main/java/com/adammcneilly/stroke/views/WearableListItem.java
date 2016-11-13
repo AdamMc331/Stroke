@@ -1,4 +1,4 @@
-package com.adammcneilly.stroke;
+package com.adammcneilly.stroke.views;
 
 import android.content.Context;
 import android.os.Build;

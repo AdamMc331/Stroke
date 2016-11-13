@@ -1,9 +1,11 @@
-package com.adammcneilly.stroke;
+package com.adammcneilly.stroke.activities;
 
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
 import android.support.wearable.view.WearableListView;
 
+import com.adammcneilly.stroke.adapters.CourseAdapter;
+import com.adammcneilly.stroke.R;
 import com.adammcneilly.util.models.Course;
 import com.adammcneilly.util.models.HoleBase;
 

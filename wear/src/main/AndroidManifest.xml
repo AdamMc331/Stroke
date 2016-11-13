@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.DeviceDefault">
         <activity
-            android:name=".SplashActivity"
+            android:name=".activities.SplashActivity"
             android:label="@string/title_activity_splash"
             android:theme="@android:style/Theme.DeviceDefault.Light">
             <intent-filter>
@@ -28,7 +28,7 @@
             android:required="false" />
 
         <activity
-            android:name=".CourseActivity"
+            android:name=".activities.CourseActivity"
             android:label="@string/title_activity_course"
             android:theme="@android:style/Theme.DeviceDefault.Light">
             <intent-filter>

@@ -1,10 +1,12 @@
-package com.adammcneilly.stroke;
+package com.adammcneilly.stroke.adapters;
 
 import android.support.wearable.view.WearableListView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.adammcneilly.stroke.R;
+import com.adammcneilly.stroke.views.WearableListItem;
 import com.adammcneilly.util.models.Course;
 
 import java.util.List;

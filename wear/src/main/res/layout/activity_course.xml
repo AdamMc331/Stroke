@@ -4,7 +4,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.adammcneilly.stroke.CourseActivity"
+    tools:context="com.adammcneilly.stroke.activities.CourseActivity"
     tools:deviceIds="wear">
 
     <android.support.wearable.view.WearableListView
