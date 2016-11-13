@@ -1,15 +1,15 @@
 package com.adammcneilly.util.models;
 
+import android.os.Parcel;
+
+import com.adammcneilly.util.base.BaseModel;
+
 /**
  * Represents a hole that the user can play.
  *
  * Created by adam.mcneilly on 11/13/16.
  */
-public class Hole {
-    /**
-     * The number of the hole on the course - between 1 and 18.
-     */
-    private int number;
+public class Hole extends HoleBase {
 
     /**
      * The number of strokes the user took to complete this hole.
@@ -17,15 +17,30 @@ public class Hole {
     private int score;
 
     /**
-     * Sets the number of this hole.
-     * @param number The number of the hole on the course, must be between 1 and 18 (inclusive).
+     * Creator that converts a parcel to a Hole object.
      */
-    public void setNumber(int number) {
-        if(number < 1 || number > 18) {
-            throw new IllegalArgumentException("Invalid hole number.");
+    public static Creator<Hole> CREATOR = new Creator<Hole>() {
+        @Override
+        public Hole createFromParcel(Parcel parcel) {
+            return new Hole(parcel);
         }
 
-        this.number = number;
+        @Override
+        public Hole[] newArray(int i) {
+            return new Hole[i];
+        }
+    };
+
+    public Hole(HoleBase base) {
+        super(base);
+    }
+
+    /**
+     * Creates a hole from a parcel.
+     */
+    public Hole(Parcel parcel) {
+        super(parcel);
+        setScore(parcel.readInt());
     }
 
     /**
@@ -40,11 +55,22 @@ public class Hole {
         this.score = score;
     }
 
-    public int getNumber() {
-        return number;
-    }
-
+    /**
+     * @return the number of strokes required for this hole.
+     */
     public int getScore() {
         return score;
+    }
+
+    /**
+     * Determines the value of this hole based on par.
+     */
+    public int getValue() {
+        return score - getPar();
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(getScore());
     }
 }
